@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #141332;
+  --primary-color: #2b2a42;
+  --primary-color-hover: #434268;
+  --main-color: #ff0077;
+  --main-color-hover: #ef2ea2;
+  --font-color: #f5f5f5;
+}
+
+body {
+  background-image: linear-gradient(#ddd, #aaa);
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  top: 0;
+  max-width: 400px;
+  height: 100%;
+  padding: 1em;
+  background-color: var(--bg-color);
+}
+
+.container {
+  height: 100%;
+  max-height: 610px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.tools-btns {
+  width: 100%;
+  margin-bottom: 0.5em;
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copied {
+  font-family: sans-serif;
+  color: var(--font-color);
+  position: absolute;
+  left: 1.6rem;
+}
+
+.copy-btn {
+  cursor: pointer;
+}
+
+.display {
+  margin-bottom: 1rem;
+}
+
+.display__inp {
+  width: 100%;
+  height: auto;
+  font-size: 3rem;
+  text-align: right;
+  color: var(--font-color);
+  border: none;
+  background-color: transparent;
+  padding-top: 6rem;
+  text-wrap: wrap;
+  outline: none;
+}
+
+.keyboard {
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 3fr);
+  gap: 0.5rem;
+}
+
+.btn {
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  color: var(--font-color);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 0.2em;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-hover);
+}
+
+.main-color {
+  background-color: var(--main-color);
+}
+
+.main-color:hover {
+  background-color: var(--main-color-hover);
+}
+
+@media screen and (min-width: 400px) {
+  .content {
+    height: 450px;
+    width: 320px;
+    border-radius: 0.5em;
+    box-shadow: 1px 1px 5px;
+  }
+
+  .display__inp {
+    padding-top: 0;
+  }
+}
