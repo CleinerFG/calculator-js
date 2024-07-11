@@ -1,6 +1,6 @@
-export const displayInput = document.getElementById("displayInp");
+const displayInput = document.getElementById("displayInp");
 
-export function calculate() {
+export default function calculate() {
   const expression = displayInput.value;
   if (expression === "") {
     displayInput.value = 0;

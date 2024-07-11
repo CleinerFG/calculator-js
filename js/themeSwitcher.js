@@ -1,5 +1,3 @@
-export { switchStyleTheme };
-
 const colorsThemes = {
   dark: [
     ["--bg-color", "#141332"],
@@ -20,11 +18,11 @@ const rootElement = document.querySelector(":root");
 const copyBtn = document.getElementById("copyToClipboard");
 
 // Switch theme style functions
-function switchStyleTheme(theme) {
-  // param theme: should be the string "dark" or "light"
+function switchStyleTheme(styleTheme) {
+  // param styleTheme: should be the string "dark" or "light"
 
-  content.dataset.theme = theme;
-  const arrColors = colorsThemes[theme];
+  content.dataset.theme = styleTheme;
+  const arrColors = colorsThemes[styleTheme];
 
   arrColors.forEach(function (color) {
     rootElement.style.setProperty(color[0], color[1]);
@@ -33,4 +31,13 @@ function switchStyleTheme(theme) {
   // Switch color SVG
   const copyBtnPath = copyBtn.querySelector("path");
   copyBtnPath.setAttribute("fill", arrColors[3][1]);
+}
+
+export default function themeSwitcher(ev) {
+  const switchBtn = ev.currentTarget;
+  if (switchBtn.checked) {
+    switchStyleTheme("light");
+    return;
+  }
+  switchStyleTheme("dark");
 }
